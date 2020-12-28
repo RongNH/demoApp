@@ -1,0 +1,121 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card" style="margin-top: 5%;">
+            <h3 class="card-header">Khai Báo Thông Tin</h3>
+            <div class="card-body">
+                <div class="submit-form">
+                    <div *ngIf="!submitted">
+                        <div class="form-group" action="/" enctype="multipart/form-data">
+                            <label for="TenMay">Tên và mã máy</label>
+                            <input id="TenMay" name="TenMay" type="text" class="form-control" required aria-valuetext="EEEE" [(ngModel)]="Computer.TenMay" #TenMay="ngModel" placeholder="Vd: Dell OptiPlex 380SF-N-Series Base, Intel Pentium DC proE5700,2GB D (M)..." />
+                            <div *ngIf="TenMay.invalid && (TenMay.dirty || TenMay.touched)" class="alert alert-danger">
+                                <div *ngIf="TenMay.errors.required"> Hãy nhập tên và mã máy</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" action="/" enctype="multipart/form-data">
+                            <label for="username">Tên chủ tài sản: </label>
+                            <input id="username" name="username" type="text" class="form-control" required aria-valuetext="EEEE" [(ngModel)]="Computer.username" #username="ngModel" placeholder="Vd: Nguyễn Văn A" />
+                            <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+                                <div *ngIf="username.errors.required"> Hãy nhập tên chủ tài sản</div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group" action="/" enctype="multipart/form-data">
+                            <label for="mail">E-Mail chủ tài sản: </label>
+                            <input id="mail" name="username" type="text" class="form-control" required aria-valuetext="EEEE" [(ngModel)]="Computer.mail" #mail="ngModel" placeholder="Vd: example@fpt.com.vn" />
+                            <div *ngIf="mail.invalid && (mail.dirty || mail.touched)" class="alert alert-danger">
+                                <div *ngIf="mail.errors.required"> Hãy nhập E-mail chủ tài sản</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="MaTaiSan">Mã tài sản:</label>
+                            <input class="form-control" id="MaTaiSan" name="MaTaiSan" [(ngModel)]="Computer.MaTaiSan" required aria-valuetext="EEEE" name="MaTaiSan" #MaTaiSan="ngModel" />
+                            <div *ngIf="MaTaiSan.invalid && (MaTaiSan.dirty || MaTaiSan.touched)" class="alert alert-danger">
+                                <div *ngIf="MaTaiSan.errors.required"> Hãy nhập mã tài sản</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="DonVi">Đơn Vị Tiếp Nhận:</label>
+                            <input class="form-control" id="DonVi" name="DonVi" [(ngModel)]="Computer.DonVi" required aria-valuetext="EEEE" name="DonVi" #DonVi="ngModel" />
+                            <div *ngIf="DonVi.invalid && (DonVi.dirty || DonVi.touched)" class="alert alert-danger">
+                                <div *ngIf="DonVi.errors.required"> Hãy nhập đơn vị tiếp quản</div>
+                            </div>
+                        </div>
+
+                        <div class="from-group">
+                            <label for="MoTa">Mô tả lỗi: </label>
+                            <textarea class="form-control" id="MoTa" rows="3" placeholder="Ví dụ: Màn hình bị hỏng, hư nguồn..." [(ngModel)]="Computer.MoTa"></textarea><br/></div>
+                        <div class="form-group">
+                            <div class="from-group">
+                                <label for="KetLuan">Kết luận: </label>
+                                <textarea class="form-control" id="KetLuan" rows="3" placeholder="Kết luận tình trạng máy" [(ngModel)]="Computer.KetLuan"></textarea><br/></div>
+                            <div class="form-group">
+                                <div>
+                                    <div><label for="MaTaiSan">Tag: <span></span></label><button *ngFor="let tag of Computer. Tag" class="badge badge-pill badge-secondary" style="margin-left: 0.2em;margin-bottom: 0.9em;" (click)="removeTag(tag)"> {{tag}} </button>
+                                        <button class="badge badge-pill badge-primary" style="margin-left: 0.2em;margin-bottom: 0.9em;" type="button" data-toggle="modal" (click)="open(content3)">Add+</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <form  class="from-group">
+                            <div class="form-group">
+                                <label for="file">Nhập Ảnh: &nbsp; </label>
+                                <input type="file" (change)="uploadFile($event)" multiple accept="image/x-png,image/gif,image/jpeg" />
+                                <div><label for="Img"> <span></span></label><button *ngFor="let img of Computer.img" class="badge badge-pill badge-secondary" style="margin-left: 0.2em;margin-bottom: 0.9em;" (click)="removeImg(img)"> {{img}} </button>
+                                </div>
+                            </div>
+
+                        </form>
+                        <br>
+                        <div *ngIf="username.valid && TenMay.valid && MaTaiSan.valid && mail.valid && DonVi.valid">
+                            <button type="submit" style="float: right;" (click)="getTime(); saveComputer();" class="btn btn-success">Tạo</button>
+                        </div>
+
+                    </div>
+
+                    <div *ngIf="submitted">
+                        <h4>You submitted successfully!</h4>
+                        <button class="btn btn-success" (click)="newComputer()">Tạo thêm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-template #content3 let-modal>
+        <div class="modal-header">
+            <h4 class="modal-TenMay" id="modal-basic-TenMay" style="font-size: 1.4em;">Hãy chọn các Tag</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')"> <span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-body">
+            <button type="submit" (click)="onAddTag('CPU')" class="btn btn-warning btn-sm mt-2">CPU</button>
+            <button style="margin-left: 1em;" type="submit" (click)="onAddTag('Màn Hình')" class="btn btn-warning btn-sm mt-2">Màn Hình</button>
+            <button style="margin-left: 1em;" type="submit" (click)="onAddTag('Case')" class="btn btn-warning btn-sm mt-2">Case</button>
+            <button style="margin-left: 1em;" type="submit" (click)="onAddTag('Bàn Phím')" class="btn btn-warning btn-sm mt-2">Bàn Phím</button>
+            <button style="margin-left: 1em;" type="submit" (click)="onAddTag('Nguồn')" class="btn btn-warning btn-sm mt-2">Nguồn</button>
+            <button style="margin-left: 1em;" type="submit" (click)="onAddTag('Phần mềm')" class="btn btn-warning btn-sm mt-2">Phần mềm</button>
+            <button style="margin-left: 1em;" type="submit" (click)="onAddTag('RAM')" class="btn btn-warning btn-sm mt-2">RAM</button>
+            <button style="margin-left: 1em;" type="submit" (click)="onAddTag('Main')" class="btn btn-warning btn-sm mt-2">Main</button>
+            <button style="margin-left: 1em;" type="submit" (click)="onAddTag('HDD')" class="btn btn-warning btn-sm mt-2">HDD</button>
+            <button style="margin-left: 1em;" type="submit" (click)="onAddTag('HDMI')" class="btn btn-warning btn-sm mt-2">HDMI</button>
+            <button style="margin-left: 1em;" type="submit" (click)="onAddTag('SSD')" class="btn btn-warning btn-sm mt-2">SSD</button>
+            <button style="margin-left: 1em;" type="submit" (click)="onAddTag('DVD')" class="btn btn-warning btn-sm mt-2">DVD</button>
+        </div>
+    </ng-template>
+</body>
+
+</html>

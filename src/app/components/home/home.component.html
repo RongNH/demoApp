@@ -1,0 +1,10 @@
+<nav class="navbar navbar-light bg-light">
+    <a href="#" class="navbar-brand">Fix Computer</a>
+    <form class="form-inline">
+        <a *ngIf="email && mail" style="margin-right: 1em;">Xin chào {{email}}</a>
+        <a [routerLink]="['/Logout']" routerLinkActive="router-link-active"><button (click)="OnLogout()" class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button></a>
+
+    </form>
+</nav>
+
+<app-computer-list></app-computer-list>

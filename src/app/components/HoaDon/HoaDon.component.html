@@ -1,0 +1,385 @@
+<button class="btn btn-outline-primary mr-1" printSectionId="print-section" ngxPrint>In/Lưu pdf</button> &nbsp; <button id="btn-export" class="btn btn-outline-primary mr-1" (click)="Export2Doc('source-html')">Lưu file .Doc</button>
+<div id="print-section">
+    <p style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;margin-left:13.5pt;line-height:150%;'><strong><span style='font-size:19px;font-family:Time New Roman ;'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="/assets/img/logo.jpg" width="130px" height="100px"> &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; KIỂM TRA T&Igrave;NH TRẠNG THIẾT BỊ TIN HỌC</span></strong></p>
+    <hr>
+    <hr style=" border-bottom: 5px solid rgb(0, 0, 0); margin-top: -0.5em;">
+    <p><br></p>
+    <p style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;margin-left:13.5pt;line-height:150%;'><strong><span style='font-size:16px;line-height:150%;font-family:Time New Roman ;'>Người y&ecirc;u cầu&nbsp;</span></strong><span style='font-size:16px;line-height:150%;font-family:Time New Roman ;'>(c&aacute;n bộ sử dụng t&agrave;i sản/c&aacute;n bộ quản l&yacute; t&agrave;i sản): &nbsp;</span>        <span style='font-family: Time New Roman, serif;'> <strong> {{username}}</strong></span></p>
+    <p style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;margin-left:13.5pt;line-height:150%;'><span style='font-size:16px;line-height:150%;font-family:Time New Roman ;'>Thuộc</span><span style='font-size:16px;line-height:150%;font-family:Time New Roman ;'>&nbsp;Đơn bị/Bộ phận</span><span style='font-size:16px;line-height:150%;font-family:Time New Roman ;'>: {{DonVi}}</span></p>
+    <p style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;margin-left:13.5pt;line-height:150%;'><span style='font-size:16px;line-height:150%;font-family:Time New Roman ;'>Ng&agrave;y, giờ kiểm tra:&nbsp; {{Time | date: 'dd/MM/yyyy hh:mm:ss'}}</span></p>
+    <p><br></p>
+    <table style="float: left;width:93.72%;border-collapse:collapse;border:none;margin-left:6.75pt;margin-right:6.75pt;">
+        <tbody>
+            <tr>
+                <td style="width: 4.6549%; border: 1pt solid windowtext; padding: 0in 5.4pt; height: 31.4pt;">
+                    <p style='margin:0in;text-align:center;font-size:13px;font-family:".VnTime"  ;'><strong>&nbsp;<span style='font-size:16px;font-family:  Time New Roman ;'>TT</span></strong></p>
+                </td>
+                <td style="width:9.76%;border:solid windowtext 1.0pt;border-left:  none;padding:0in 5.4pt 0in 5.4pt;height:31.4pt;">
+                    <p style='margin:0in;text-align:center;font-size:13px;font-family:".VnTime"  ;'><strong>&nbsp;<span style='font-size:15px;font-family:  Time New Roman ;'>T&ecirc;n người d&ugrave;nng</span></strong></p>
+                </td>
+                <td style="width:24.5%;border:solid windowtext 1.0pt;border-left:  none;padding:0in 5.4pt 0in 5.4pt;height:31.4pt;">
+                    <p style='margin:0in;text-align:center;font-size:13px;font-family:".VnTime"  ;'><strong>&nbsp;<span style='font-size:15px;font-family:  Time New Roman ;'>T&ecirc;n thiết bị v&agrave; cấu h&igrave;nh hiện tại</span></strong></p>
+                </td>
+                <td style="width:12.84%;border:solid windowtext 1.0pt;border-left:  none;padding:0in 5.4pt 0in 5.4pt;height:31.4pt;">
+                    <p style='margin:0in;text-align:center;font-size:13px;font-family:".VnTime"  ;'><strong>&nbsp;<span style='font-size:15px;font-family:  Time New Roman ;'>M&atilde; TSCĐ</span></strong></p>
+                </td>
+                <td style="width:23.78%;border:solid windowtext 1.0pt;border-left:  none;padding:0in 5.4pt 0in 5.4pt;height:31.4pt;">
+                    <p style='margin:0in;text-align:center;font-size:13px;font-family:".VnTime"  ;'><strong>&nbsp;<span style='font-size:15px;font-family:  Time New Roman ;'>T&igrave;nh trạng thiết bị</span></strong></p>
+                </td>
+                <td style="width: 24.3981%; border-top: 1pt solid windowtext; border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-image: initial; border-left: none; padding: 0in 5.4pt; height: 31.4pt;">
+                    <p style='margin:0in;text-align:center;font-size:13px;font-family:".VnTime"  ;'><strong>&nbsp;<span style='font-size:15px;font-family:  Time New Roman ;'>Kết luận (Thay mới, chuyển bảo h&agrave;nh, chuyển sửa chữa kh&ocirc;ng cần sửa chữa....)<sup>[1]</sup></span></strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 4.6549%; border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-left: 1pt solid windowtext; border-image: initial; border-top: none; padding: 0in 5.4pt;">
+                    <p style='margin:0in;text-align:center;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:0in;'><br></p>
+                    <p style="text-align: center;">1</p>
+                    <p><br></p>
+                </td>
+                <td style="width:9.76%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;">
+                    <p style='margin:0in;text-align:center;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:0in;'><span style='font-size:16px;font-family:Time New Roman ;'>&nbsp;</span></p>
+                    <h5 style='margin:0in;font-size:16px;font-family:".VnTime"  ;font-weight:normal;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:0in;text-align:center;'><span style='font-family:Time New Roman ;'>&nbsp;{{Mail}}</span></h5>
+                    <p><br></p>
+                </td>
+                <td style="width:24.5%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;">
+                    <h5 style='margin:0in;font-size:16px;font-family:".VnTime"  ;font-weight:normal;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:0in;text-align:center;'><span style='font-family:Time New Roman ;'>&nbsp;{{ Computer }}</span></h5>
+                </td>
+                <td style="width:12.84%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;">
+                    <h5 style='margin:0in;font-size:16px;font-family:".VnTime"  ;font-weight:normal;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:0in;text-align:center;'><span style='font-family:Time New Roman ;'>{{ MTS }}</span></h5>
+                </td>
+                <td style="width:23.78%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;">
+                    <h5 style='margin:0in;font-size:16px;font-family:".VnTime"  ;font-weight:normal;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:0in;text-align:center;'><span style='font-family:Time New Roman ;'>{{TinhTrang}}</span></h5>
+                </td>
+                <td style="width: 24.3981%; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0in 5.4pt;">
+                    <h5 style='margin:0in;font-size:16px;font-family:".VnTime"  ;font-weight:normal;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:0in;text-align:center;'><span style='font-family:Time New Roman ;'>{{KetLuan}}</span></h5>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p><br></p>
+    <p style='margin: 0in; text-align: center; font-size: 13px; font-family: ".VnTime", sans-serif;'>&nbsp;</p>
+    <p style='margin: 0in; text-align: center; font-size: 13px; font-family: ".VnTime", sans-serif;'>&nbsp;</p>
+    <p style='margin: 0in; text-align: center; font-size: 13px; font-family: ".VnTime", sans-serif;'>&nbsp;</p>
+    <div style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;'><br>
+        <div id="ftn1" style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;'>
+            <p style='margin: 0in; text-align: center; font-size: 13px; font-family: ".VnTime", sans-serif;'><br></p>
+            <p style='margin: 0in; text-align: center; font-size: 13px; font-family: ".VnTime", sans-serif;'><br></p>
+            <p style='margin: 0in; text-align: center; font-size: 13px; font-family: ".VnTime", sans-serif;'><br></p>
+            <p style='margin: 0in; text-align: center; font-size: 13px; font-family: ".VnTime", sans-serif;'><br></p>
+            <p style='margin: 0in; text-align: left; font-size: 13px; font-family: ".VnTime", sans-serif;'><br></p>
+            <p style='margin: 0in; text-align: left; font-size: 13px; font-family: ".VnTime", sans-serif;'><strong><span style='font-size:16px;font-family:Time New Roman ;'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Người y&ecirc;u cầu &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></strong><strong><span style='font-size:16px;font-family:Time New Roman ;'>IT x&aacute;c nhận<sup>[2]</sup></span></strong></p>
+            <p style='margin: 0in; text-align: left; font-size: 13px; font-family: ".VnTime", sans-serif;'><br></p>
+            <p style='margin: 0in; text-align: left; font-size: 13px; font-family: ".VnTime", sans-serif;'><br></p>
+            <p style='margin: 0in; text-align: left; font-size: 13px; font-family: ".VnTime", sans-serif;'><br></p>
+            <p style='margin: 0in; text-align: left; font-size: 13px; font-family: ".VnTime", sans-serif;'><strong><span style='font-size:16px;font-family:Time New Roman ;'>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span>{{username}}</span> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;V&acirc;n Th&aacute;i Nhựt Duy</span></strong></p>
+            <p><br></p>
+            <p style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;'><span style="vertical-align:super;"><span style='font-family:Time New Roman ;'><span style="vertical-align:super;"><span style='font-size:13px;font-family:Time New Roman ;'>[1]</span></span>&nbsp;</span>&nbsp;</span><span style='font-family:Time New Roman ;'>&nbsp;Do c&aacute;n bộ IT ghi nhận sau khi kiểm tra t&igrave;nh trạng thiết bị</span></p>
+            <span style="vertical-align:super;"><span style='font-size:13px;font-family:Time New Roman ;'><span style="vertical-align:super;"><span style='font-size:13px;font-family:Time New Roman ;'>[2]</span></span>&nbsp;</span>&nbsp;</span>
+            <span style='font-size:13px;font-family:Time New Roman ;'>&nbsp;C&aacute;n bộ được ph&acirc;n c&ocirc;ng tại IT x&aacute;c nhận</span>
+        </div>
+        <hr>
+        <p><span style='font-size:13px;font-family:Time New Roman ;'><span style='font-size:11px;font-family:"Time New Roman"  ;'>01-BM/TT/HDCV/FIS 1/1  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style='font-size:11px;font-family:Time New Roman  ;'>&nbsp;</span><strong><span style='font-size:19px;font-family:Time New Roman ;'>Internal Use</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><strong><span style='font-size:12px;font-family:"Time New Roman",serif;font-weight:normal;'>1/{{totalPage}}</span></strong></span>&nbsp;</span>
+        </p><br><br><br><br>
+        <p style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;'><strong><span style='font-size:16px;font-family:Time New Roman ;'>X&Aacute;C NHẬN SỬA CHỮA, BẢO H&Agrave;NH:</span></strong></p>
+        <p style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;'><strong><span style='font-size:16px;font-family:Time New Roman ;'>&nbsp;</span></strong></p>
+        <table style="margin-left: 18.9pt; border-collapse: collapse; border: none; margin-right: calc(2%); width: 94%;">
+            <tbody>
+                <tr>
+                    <td style="width: 23.0352%; border: 1pt solid windowtext; padding: 0in 5.4pt; height: 28.75pt; vertical-align: top;">
+                        <p style='margin:0in;text-align:center;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:0in;'><strong><span style='font-size:16px;font-family:Time New Roman ;'>Nội dung</span></strong></p>
+                    </td>
+                    <td style="width: 21.7188%; border-top: 1pt solid windowtext; border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-image: initial; border-left: none; padding: 0in 5.4pt; height: 28.75pt; vertical-align: top;">
+                        <p style='margin:0in;text-align:center;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:0in;'><strong><span style='font-size:16px;font-family:Time New Roman ;'>X&aacute;c nhận của người y&ecirc;u cầu</span></strong></p>
+                    </td>
+                    <td style="width: 21.2499%; border-top: 1pt solid windowtext; border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-image: initial; border-left: none; padding: 0in 5.4pt; height: 28.75pt; vertical-align: top;">
+                        <p style='margin:0in;text-align:center;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:0in;'><strong><span style='font-size:16px;font-family:Time New Roman ;'>X&aacute;c nhận của Trưởng bộ phận c&oacute; thiết bị hỏng</span></strong></p>
+                    </td>
+                    <td style="width: 17.4375%; border-top: 1pt solid windowtext; border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-image: initial; border-left: none; padding: 0in 5.4pt; height: 28.75pt; vertical-align: top;">
+                        <p style='margin:0in;text-align:center;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:0in;'><strong><span style='font-size:16px;font-family:Time New Roman ;'>X&aacute;c nhận của IT</span></strong></p>
+                    </td>
+                    <td style="width: 16.4217%; border-top: 1pt solid windowtext; border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-image: initial; border-left: none; padding: 0in 5.4pt; height: 28.75pt; vertical-align: top;">
+                        <p style='margin:0in;text-align:center;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:0in;'><strong><span style='font-size:16px;font-family:Time New Roman ;'>Ng&agrave;y ho&agrave;n th&agrave;nh thực tế<sup>[3]</sup></span></strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 23.0352%; border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-left: 1pt solid windowtext; border-image: initial; border-top: none; padding: 0in 5.4pt; height: 40.4pt;">
+                        <p style='margin:0in;text-align:left;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:0in;'><strong><span style='font-size:16px;font-family:Time New Roman ;'>Thay mới</span></strong></p>
+                    </td>
+                    <td style="width: 21.7188%; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0in 5.4pt; height: 40.4pt; vertical-align: top;">
+                        <p style='margin:0in;text-align:center;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:27.35pt;'><strong><span style='font-size:16px;font-family:Time New Roman ;'>&nbsp;</span></strong></p>
+                    </td>
+                    <td style="width: 21.2499%; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0in 5.4pt; height: 40.4pt; vertical-align: top;">
+                        <p style='margin:0in;text-align:center;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:27.35pt;'><strong><span style='font-size:16px;font-family:Time New Roman ;'>&nbsp;</span></strong></p>
+                    </td>
+                    <td style="width: 17.4375%; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0in 5.4pt; height: 40.4pt; vertical-align: top;">
+                        <p style='margin:0in;text-align:center;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:27.35pt;'><strong><span style='font-size:16px;font-family:Time New Roman ;'>&nbsp;</span></strong></p>
+                    </td>
+                    <td style="width: 16.4217%; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0in 5.4pt; height: 40.4pt; vertical-align: top;">
+                        <p style='margin:0in;text-align:center;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:27.35pt;'><strong><span style='font-size:16px;font-family:Time New Roman ;'>&nbsp;</span></strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 23.0352%; border-right: 1pt solid windowtext; border-bottom: 1pt solid windowtext; border-left: 1pt solid windowtext; border-image: initial; border-top: none; padding: 0in 5.4pt; height: 40.4pt;">
+                        <p style='margin:0in;text-align:left;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:0in;'><strong><span style='font-size:16px;font-family:Time New Roman ;'>Chuyển bảo h&agrave;nh sửa chữa</span></strong></p>
+                    </td>
+                    <td style="width: 21.7188%; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0in 5.4pt; height: 40.4pt; vertical-align: top;">
+                        <p style='margin:0in;text-align:center;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:27.35pt;'><strong><span style='font-size:16px;font-family:Time New Roman ;'>&nbsp;</span></strong></p>
+                    </td>
+                    <td style="width: 21.2499%; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0in 5.4pt; height: 40.4pt; vertical-align: top;">
+                        <p style='margin:0in;text-align:center;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:27.35pt;'><strong><span style='font-size:16px;font-family:Time New Roman ;'>&nbsp;</span></strong></p>
+                    </td>
+                    <td style="width: 17.4375%; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0in 5.4pt; height: 40.4pt; vertical-align: top;">
+                        <p style='margin:0in;text-align:center;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:0in;'><strong><span style='font-size:16px;font-family:Time New Roman ;'>&nbsp;</span></strong></p>
+                    </td>
+                    <td style="width: 16.4217%; border-top: none; border-left: none; border-bottom: 1pt solid windowtext; border-right: 1pt solid windowtext; padding: 0in 5.4pt; height: 40.4pt; vertical-align: top;">
+                        <p style='margin:0in;text-align:center;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;margin-right:0in;margin-bottom:3.0pt;margin-left:0in;'><strong><span style='font-size:16px;font-family:Time New Roman ;'>&nbsp;</span></strong></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;'>&nbsp;</p>
+        <p style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;'>&nbsp;</p>
+        <p style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;'><br></p>
+        <p style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;margin-top:3.0pt;'><br></p>
+        <div style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;'><br></div>
+        <div style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;'><br></div>
+        <div style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;'><br></div>
+        <div style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;'><br></div>
+        <div style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;'><br></div>
+        <div style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;'><br></div>
+        <p><br></p>
+        <p><br></p>
+        <p><br></p>
+        <p><br></p>
+        <p><br></p>
+        <p><br></p>
+        <div style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;'><br>
+            <div id="ftn1" style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;'>
+                <p style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;'><sup>[3]&nbsp;</sup><span style='font-size:12px;font-family:Time New Roman  ;'>IT ghi mục n&agrave;y</span></p>
+                <hr>
+                <p><span style='font-size:13px;font-family:Time New Roman ;'><span style='font-size:11px;font-family:"Time New Roman"  ;'>01-BM/TT/HDCV/FIS 1/1  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style='font-size:11px;font-family:Time New Roman  ;'>&nbsp;</span><strong><span style='font-size:19px;font-family:Time New Roman ;'>Internal Use</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><strong><span style='font-size:12px;font-family:"Time New Roman",serif;font-weight:normal;'>2/{{totalPage}}</span></strong></span>&nbsp;</span>
+                </p>
+            </div>
+
+            <div *ngIf="this.oddPage" style="text-align: center;"><br>
+
+                <div style="text-align: center; display: inline; " *ngFor="let in of counter(this.UrlLength.length/2) ;let i = index">
+                    <div style="display: inline-block; margin-left: 4.5em;"><img height="600px" width="360px" [src]="UrlLength[(UrlLength.length/2) + i] | async"></div>
+                    <div style="display: inline-block; margin-left: 4.5em;"><img height="600px" width="360px" [src]="UrlLength[i] | async"></div>
+                    <br><br><br><br>
+                    <hr>
+                    <p><span style='font-size:13px;font-family:Time New Roman ;'><span style='font-size:11px;font-family:"Time New Roman"  ;'>01-BM/TT/HDCV/FIS 1/1  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style='font-size:11px;font-family:Time New Roman  ;'>&nbsp;</span><strong><span style='font-size:19px;font-family:Time New Roman ;'>Internal Use</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><strong><span style='font-size:12px;font-family:"Time New Roman",serif;font-weight:normal;'>{{3+i}}/{{totalPage}}</span></strong></span>&nbsp;</span>
+                    </p>
+                </div>
+            </div>
+            <div *ngIf="!this.oddPage" style="text-align: center;"><br>
+
+                <div style="text-align: center; display: inline; " *ngFor="let in of counter((this.UrlLength.length - 1)/2) ;let i = index">
+                    <div style="display: inline-block; margin-left: 4.5em;"><img height="600px" width="360px" [src]="UrlLength[((UrlLength.length-1)/2) + i] | async"></div>
+                    <div style="display: inline-block; margin-left: 4.5em;"><img height="600px" width="360px" [src]="UrlLength[i] | async"></div>
+                    <br><br><br><br>
+                    <hr>
+                    <p><span style='font-size:13px;font-family:Time New Roman ;'><span style='font-size:11px;font-family:"Time New Roman"  ;'>01-BM/TT/HDCV/FIS 1/1  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style='font-size:11px;font-family:Time New Roman  ;'>&nbsp;</span><strong><span style='font-size:19px;font-family:Time New Roman ;'>Internal Use</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><strong><span style='font-size:12px;font-family:"Time New Roman",serif;font-weight:normal;'>{{3+i}}/{{totalPage}}</span></strong></span>&nbsp;</span>
+                    </p>
+                </div>
+                <div style="text-align: center; display: inline;">
+                    <div style="display: inline-block; margin-left: 4.5em;"><img height="600px" width="360px" [src]="UrlLength[UrlLength.length-1] | async"></div>
+                    <br><br><br><br>
+                    <hr>
+                    <p><span style='font-size:13px;font-family:Time New Roman ;'><span style='font-size:11px;font-family:"Time New Roman"  ;'>01-BM/TT/HDCV/FIS 1/1  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style='font-size:11px;font-family:Time New Roman  ;'>&nbsp;</span><strong><span style='font-size:19px;font-family:Time New Roman ;'>Internal Use</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><strong><span style='font-size:12px;font-family:"Time New Roman",serif;font-weight:normal;'>{{totalPage}}/{{totalPage}}</span></strong></span>&nbsp;</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="source-html">
+    <div style=" border-bottom: 3px solid rgb(0, 0, 0);">
+        <p style='margin-right:0in;margin-left:13.5pt;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:0in;margin-bottom:0in;text-align:center;line-height:150%;'><img src="https://i.imgur.com/JrXXfCU.jpg"><strong><span style="font-size:19px;line-height:150%;"> &nbsp;  &nbsp;  &nbsp;  &nbsp;KIỂM TRA T&Igrave;NH TRẠNG THIẾT BỊ TIN HỌC</span></strong></p>
+    </div>
+    <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+    <p style='margin-right:0in;margin-left:13.5pt;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:0in;margin-bottom:0in;text-align:justify;line-height:150%;'><strong>Người y&ecirc;u cầu&nbsp;</strong>(c&aacute;n bộ sử dụng t&agrave;i sản/c&aacute;n bộ quản l&yacute; t&agrave;i sản): &nbsp;<strong>{{username}}</strong></p>
+    <p style='margin-right:0in;margin-left:13.5pt;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:0in;margin-bottom:0in;text-align:justify;line-height:150%;'>Thuộc&nbsp;Đơn bị/Bộ phận: {{DonVi}}</p>
+    <p style='margin-right:0in;margin-left:13.5pt;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:0in;margin-bottom:0in;text-align:justify;line-height:150%;'>Ng&agrave;y, giờ kiểm tra:&nbsp;{{Time | date: 'dd/MM/yyyy hh:mm:ss'}}</p>
+    <table style="border: none;width:100.0%;margin-left:6.75pt;border-collapse:collapse;">
+        <tbody>
+            <tr>
+                <td style="width:4.88%;border:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:30.1pt;">
+                    <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:center;'><strong><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span>TT</strong></p>
+                </td>
+                <td style="width:9.72%;border:solid windowtext 1.0pt;border-left:  none;padding:0in 5.4pt 0in 5.4pt;height:30.1pt;">
+                    <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:center;'><strong><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></strong><strong><span style="font-size:15px;">T&ecirc;n người d&ugrave;nng</span></strong></p>
+                </td>
+                <td style="width:24.48%;border:solid windowtext 1.0pt;border-left:  none;padding:0in 5.4pt 0in 5.4pt;height:30.1pt;">
+                    <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:center;'><strong><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></strong><strong><span style="font-size:15px;">T&ecirc;n thiết bị v&agrave; cấu h&igrave;nh hiện tại</span></strong></p>
+                </td>
+                <td style="width:12.82%;border:solid windowtext 1.0pt;border-left:  none;padding:0in 5.4pt 0in 5.4pt;height:30.1pt;">
+                    <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:center;'><strong><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></strong><strong><span style="font-size:15px;">M&atilde; TSCĐ</span></strong></p>
+                </td>
+                <td style="width:23.76%;border:solid windowtext 1.0pt;border-left:  none;padding:0in 5.4pt 0in 5.4pt;height:30.1pt;">
+                    <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:center;'><strong><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></strong><strong><span style="font-size:15px;">T&igrave;nh trạng thiết bị</span></strong></p>
+                </td>
+                <td style="width:24.36%;border:solid windowtext 1.0pt;border-left:  none;padding:0in 5.4pt 0in 5.4pt;height:30.1pt;border-image: initial;">
+                    <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:center;'><strong><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></strong><strong><span style="font-size:15px;">Kết luận (Thay mới, chuyển bảo h&agrave;nh, chuyển sửa chữa kh&ocirc;ng cần sửa chữa....)<sup>[1]</sup></span></strong></p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:4.88%;border:solid windowtext 1.0pt;border-top:  none;padding:0in 5.4pt 0in 5.4pt;height:61.0pt;border-image: initial;">
+                    <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:center;'>1</p>
+                </td>
+                <td style="width:9.72%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:61.0pt;">
+                    <h5 style='margin-right:0in;margin-left:0in;font-size:13px;font-family:Time New Roman ;font-weight:bold;margin-top:3.0pt;margin-bottom:3.0pt;text-align:center;'><span style="font-size:16px;font-weight:normal;">&nbsp;{{Mail}}</span></h5>
+                </td>
+                <td style="width:24.48%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:61.0pt;">
+                    <h5 style='margin-right:0in;margin-left:0in;font-size:13px;font-family:Time New Roman ;font-weight:bold;margin-top:3.0pt;margin-bottom:3.0pt;text-align:center;'><span style="font-size:16px;font-weight:normal;">&nbsp;{{Computer}}</span></h5>
+                </td>
+                <td style="width:12.82%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:61.0pt;">
+                    <h5 style='margin-right:0in;margin-left:0in;font-size:13px;font-family:Time New Roman ;font-weight:bold;margin-top:3.0pt;margin-bottom:3.0pt;text-align:center;'><span style="font-size:16px;font-weight:normal;">{{MTS}}</span></h5>
+                </td>
+                <td style="width:23.76%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:61.0pt;">
+                    <h5 style='margin-right:0in;margin-left:0in;font-size:13px;font-family:Time New Roman ;font-weight:bold;margin-top:3.0pt;margin-bottom:3.0pt;text-align:center;'><span style="font-size:16px;font-weight:normal;">{{TinhTrang}}</span></h5>
+                </td>
+                <td style="width:24.36%;border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:61.0pt;">
+                    <h5 style='margin-right:0in;margin-left:0in;font-size:13px;font-family:Time New Roman ;font-weight:bold;margin-top:3.0pt;margin-bottom:3.0pt;text-align:center;'><span style="font-size:16px;font-weight:normal;">{{KetLuan}}</span></h5>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+    <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+    <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;'><strong>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Người y&ecirc;u cầu &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; IT x&aacute;c nhận<sup>[2]</sup></strong></p>
+    <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+    <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+    <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+    <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+
+    <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;'><strong>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; <span>{{username}}</span>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span> V&acirc;n Th&aacute;i Nhựt Duy</span></strong>
+
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><br></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><br></p>
+        <p style='margin:0in;text-align:justify;font-size:13px;font-family:".VnTime"  ;'><span style="vertical-align:super;"><span style='font-family:Time New Roman ;'><span style="vertical-align:super;"><span style='font-size:13px;font-family:Time New Roman ;'>[1]</span></span>&nbsp;</span>&nbsp;</span><span style='font-family:Time New Roman ;'>&nbsp;Do c&aacute;n bộ IT ghi nhận sau khi kiểm tra t&igrave;nh trạng thiết bị</span></p>
+        <span style="vertical-align:super;"><span style='font-size:13px;font-family:Time New Roman ;'><span style="vertical-align:super;"><span style='font-size:13px;font-family:Time New Roman ;'>[2]</span></span>&nbsp;</span>&nbsp;</span>
+        <span style='font-size:13px;font-family:Time New Roman ;'>&nbsp;C&aacute;n bộ được ph&acirc;n c&ocirc;ng tại IT x&aacute;c nhận</span>
+
+        <hr>
+        <span style='font-size:13px;font-family:Time New Roman ;'><span style='font-size:11px;font-family:"Time New Roman"  ;'>01-BM/TT/HDCV/FIS 1/1   &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style='font-size:11px;font-family:Time New Roman  ;'>&nbsp;</span><strong><span style='font-size:19px;font-family:Time New Roman ;'>Internal Use</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><strong><span style='font-size:12px;font-family:"Time New Roman",serif;font-weight:normal;'>1/{{totalPage}}</span></strong></span>&nbsp;</span>
+        <p><span style='font-size:13px;font-family:Time New Roman  ;'><br>&nbsp;</span><strong>X&Aacute;C NHẬN SỬA CHỮA, BẢO H&Agrave;NH:</strong></p>
+        <table style="border: none;width:94.0%;margin-left:18.9pt;border-collapse:collapse;margin-right:calc(2%);">
+            <tbody>
+                <tr>
+                    <td style="width: 23.02%;border: 1pt solid windowtext;padding: 0in 5.4pt;height: 28.75pt;vertical-align: top;">
+                        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:3.0pt;margin-bottom:3.0pt;text-align:center;'><strong>Nội dung</strong></p>
+                    </td>
+                    <td style="width: 21.7%;border-top: 1pt solid windowtext;border-right: 1pt solid windowtext;border-bottom: 1pt solid windowtext;border-left: none;padding: 0in 5.4pt;height: 28.75pt;border-image: initial;vertical-align: top;">
+                        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:3.0pt;margin-bottom:3.0pt;text-align:center;'><strong>X&aacute;c nhận của người y&ecirc;u cầu</strong></p>
+                    </td>
+                    <td style="width: 21.24%;border-top: 1pt solid windowtext;border-right: 1pt solid windowtext;border-bottom: 1pt solid windowtext;border-left: none;padding: 0in 5.4pt;height: 28.75pt;border-image: initial;vertical-align: top;">
+                        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:3.0pt;margin-bottom:3.0pt;text-align:center;'><strong>X&aacute;c nhận của Trưởng bộ phận c&oacute; thiết bị hỏng</strong></p>
+                    </td>
+                    <td style="width: 17.42%;border-top: 1pt solid windowtext;border-right: 1pt solid windowtext;border-bottom: 1pt solid windowtext;border-left: none;padding: 0in 5.4pt;height: 28.75pt;border-image: initial;vertical-align: top;">
+                        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:3.0pt;margin-bottom:3.0pt;text-align:center;'><strong>X&aacute;c nhận của IT</strong></p>
+                    </td>
+                    <td style="width: 16.42%;border-top: 1pt solid windowtext;border-right: 1pt solid windowtext;border-bottom: 1pt solid windowtext;border-left: none;padding: 0in 5.4pt;height: 28.75pt;border-image: initial;vertical-align: top;">
+                        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:3.0pt;margin-bottom:3.0pt;text-align:center;'><strong>Ng&agrave;y ho&agrave;n th&agrave;nh thực tế<sup>[3]</sup></strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:23.02%;border:solid windowtext 1.0pt;border-top:  none;padding:0in 5.4pt 0in 5.4pt;height:40.4pt;border-image: initial;">
+                        <p style='margin-right:0in;margin-left:  0in;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:3.0pt;margin-bottom:3.0pt;'><strong>Thay mới</strong></p>
+                    </td>
+                    <td style="width: 21.7%;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0in 5.4pt;height: 40.4pt;vertical-align: top;">
+                        <p style='margin-right:0in;margin-left:27.35pt;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:3.0pt;margin-bottom:3.0pt;text-align:center;'><strong>&nbsp;</strong></p>
+                    </td>
+                    <td style="width: 21.24%;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0in 5.4pt;height: 40.4pt;vertical-align: top;">
+                        <p style='margin-right:0in;margin-left:27.35pt;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:3.0pt;margin-bottom:3.0pt;text-align:center;'><strong>&nbsp;</strong></p>
+                    </td>
+                    <td style="width: 17.42%;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0in 5.4pt;height: 40.4pt;vertical-align: top;">
+                        <p style='margin-right:0in;margin-left:27.35pt;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:3.0pt;margin-bottom:3.0pt;text-align:center;'><strong>&nbsp;</strong></p>
+                    </td>
+                    <td style="width: 16.42%;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0in 5.4pt;height: 40.4pt;vertical-align: top;">
+                        <p style='margin-right:0in;margin-left:27.35pt;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:3.0pt;margin-bottom:3.0pt;text-align:center;'><strong>&nbsp;</strong></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:23.02%;border:solid windowtext 1.0pt;border-top:  none;padding:0in 5.4pt 0in 5.4pt;height:40.4pt;border-image: initial;">
+                        <p style='margin-right:0in;margin-left:  0in;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:3.0pt;margin-bottom:3.0pt;'><strong>Chuyển bảo h&agrave;nh sửa chữa</strong></p>
+                    </td>
+                    <td style="width: 21.7%;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0in 5.4pt;height: 40.4pt;vertical-align: top;">
+                        <p style='margin-right:0in;margin-left:27.35pt;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:3.0pt;margin-bottom:3.0pt;text-align:center;'><strong>&nbsp;</strong></p>
+                    </td>
+                    <td style="width: 21.24%;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0in 5.4pt;height: 40.4pt;vertical-align: top;">
+                        <p style='margin-right:0in;margin-left:27.35pt;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:3.0pt;margin-bottom:3.0pt;text-align:center;'><strong>&nbsp;</strong></p>
+                    </td>
+                    <td style="width: 17.42%;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0in 5.4pt;height: 40.4pt;vertical-align: top;">
+                        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:3.0pt;margin-bottom:3.0pt;text-align:center;'><strong>&nbsp;</strong></p>
+                    </td>
+                    <td style="width: 16.42%;border-top: none;border-left: none;border-bottom: 1pt solid windowtext;border-right: 1pt solid windowtext;padding: 0in 5.4pt;height: 40.4pt;vertical-align: top;">
+                        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:3.0pt;margin-bottom:3.0pt;text-align:center;'><strong>&nbsp;</strong></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:3.0pt;margin-bottom:0in;text-align:justify;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:3.0pt;margin-bottom:0in;text-align:justify;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:3.0pt;margin-bottom:0in;text-align:justify;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;margin-top:3.0pt;margin-bottom:0in;text-align:justify;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><span style='font-size:13px;font-family:Time New Roman  ;'>&nbsp;</span></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><br></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><br></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><br></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><br></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><br></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><br></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><br></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><br></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><br></p>
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><br></p>
+
+        <p style='margin-right:0in;margin-left:0in;font-size:16px;font-family:Time New Roman ;margin:0in;text-align:justify;'><sup><span style='font-size:13px;font-family:Time New Roman  ;'>[3]&nbsp;</span></sup><span style='font-size:12px;font-family:Time New Roman  ;'>IT ghi mục n&agrave;y</span></p>
+        <hr>
+        <span style='font-size:13px;font-family:Time New Roman ;'><span style='font-size:11px;font-family:"Time New Roman"  ;'>01-BM/TT/HDCV/FIS 1/1   &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style='font-size:11px;font-family:Time New Roman  ;'>&nbsp;</span><strong><span style='font-size:19px;font-family:Time New Roman ;'>Internal Use</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><strong><span style='font-size:12px;font-family:"Time New Roman",serif;font-weight:normal;'>2/{{totalPage}}</span></strong></span>&nbsp;</span>
+
+        <div *ngIf="this.oddPage" style="text-align: center;"> 
+
+            <div style="text-align: center; display: inline; " *ngFor="let in of counter(this.UrlLength.length/2) ;let i = index">
+                <a style="display: inline-block; margin-left: 2em;"><img height="600px" width="360px" [src]="UrlLength[(UrlLength.length/2) + i] | async"></a>
+                &nbsp; &nbsp; &nbsp;
+                <a style="display: inline-block; margin-left: 2em;"><img height="600px" width="360px" [src]="UrlLength[i] | async"></a>
+                <br><br><br><br>
+                <hr>
+                <span style='font-size:13px;font-family:Time New Roman ;'><span style='font-size:11px;font-family:"Time New Roman"  ;'>01-BM/TT/HDCV/FIS 1/1  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style='font-size:11px;font-family:Time New Roman  ;'>&nbsp;</span><strong><span style='font-size:19px;font-family:Time New Roman ;'>Internal Use</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><strong><span style='font-size:12px;font-family:"Time New Roman",serif;font-weight:normal;'>{{3+i}}/{{totalPage}}</span></strong></span>&nbsp;</span>
+
+            </div>
+        </div>
+        <div *ngIf="!this.oddPage" style="text-align: center;">
+
+            <div style="text-align: center; display: inline; " *ngFor="let in of counter((this.UrlLength.length - 1)/2) ;let i = index">
+                <a style="display: inline-block; margin-left: 2em;"><img height="600px" width="360px" [src]="UrlLength[((UrlLength.length-1)/2) + i] | async"></a>
+                &nbsp; &nbsp; &nbsp;
+                <a style="display: inline-block; margin-left: 2em;"><img height="600px" width="360px" [src]="UrlLength[i] | async"></a>
+                <br><br><br><br><br>
+                <hr>
+                <span style='font-size:13px;font-family:Time New Roman ;'><span style='font-size:11px;font-family:"Time New Roman"  ;'>01-BM/TT/HDCV/FIS 1/1  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style='font-size:11px;font-family:Time New Roman  ;'>&nbsp;</span><strong><span style='font-size:19px;font-family:Time New Roman ;'>Internal Use</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><strong><span style='font-size:12px;font-family:"Time New Roman",serif;font-weight:normal;'>{{3+i}}/{{totalPage}}</span></strong></span>&nbsp;</span>
+            </div>
+            <div style="text-align: center; display: inline;">
+                <a style="display: inline-block;"><img height="600px" width="360px" [src]="UrlLength[UrlLength.length-1] | async"></a>
+                <br><br><br><br><br><br>
+                <hr>
+                <span style='font-size:13px;font-family:Time New Roman ;'><span style='font-size:11px;font-family:"Time New Roman"  ;'>01-BM/TT/HDCV/FIS 1/1  &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style='font-size:11px;font-family:Time New Roman  ;'>&nbsp;</span><strong><span style='font-size:19px;font-family:Time New Roman ;'>Internal Use</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong><strong><span style='font-size:12px;font-family:"Time New Roman",serif;font-weight:normal;'>{{totalPage}}/{{totalPage}}</span></strong></span>&nbsp;</span>
+            </div>
+        </div>
+</div>

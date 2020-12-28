@@ -1,0 +1,170 @@
+<div class="example-container">
+    <h4>List Máy Lỗi</h4>
+    <div cdkDropList #Error_Computer_List="cdkDropList" [cdkDropListData]="tutorials" [cdkDropListConnectedTo]="[Done_List,Inside_List,Outside_List]" class="example-list" (cdkDropListDropped)="drop($event)">
+        <button class="btn btn-primary btn-sm btn-block" (click)="open(addComputer)">Create Computer</button>
+        <div class="example-box" *ngFor="let item of tutorials; let i = index;" cdkDrag>
+            <div>
+                <div class="item" style="font-size: auto;">Tên Máy: {{item.TenMay}}</div>
+                <br>
+                <div class="item" style="font-size: auto;">Mã Tài Sản: {{item.MaTaiSan}}</div>
+                <br>
+                <div>Tag: <button *ngFor="let tag of item. Tag" class="badge badge-pill badge-secondary" style="margin-left: 0.2em;margin-bottom: 0.9em;"> {{tag}} </button></div>
+                <br>
+                <div>
+                    Tình trạng: <span class="badge badge-danger">Máy bị lỗi</span>
+                </div>
+                <br>
+                <button class="btn btn-primary btn-sm float-lg-left" [class.active]="i == currentItem" [class.active]="i == currentItem" (click)="open(detailComputer); setActiveTutorial(item,i);">Profile</button> &nbsp;
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="example-container">
+    <h4>Inside</h4>
+
+    <div cdkDropList #Inside_List="cdkDropList" [cdkDropListData]="cardInsides" [cdkDropListConnectedTo]="[Error_Computer_List,Outside_List,Done_List]" class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of cardInsides, let i = index" cdkDrag>
+            <div>
+                <div class="item" style="font-size: auto;">Tên Máy: {{item.TenMay}}</div>
+                <br>
+                <div class="item" style="font-size: auto;">Mã Tài Sản: {{item.MaTaiSan}}</div>
+                <br>
+                <div>Tag: <button *ngFor="let tag of item. Tag" class="badge badge-pill badge-secondary" style="margin-left: 0.2em;margin-bottom: 0.9em;"> {{tag}} </button></div>
+                <br>
+                <div>
+                    Tình trạng: <span class="badge badge-warning">Inside</span>
+                </div>
+                <br>
+                <button style="float: right;" class="btn btn-primary btn-sm float-lg-left" [class.active]="i == currentItem" [class.active]="i == currentItem" (click)="open(detailInside); setActiveTutorial(item,i)">Profile</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="example-container">
+    <h4>Outside</h4>
+
+    <div cdkDropList #Outside_List="cdkDropList" [cdkDropListData]="cardOutsides" [cdkDropListConnectedTo]="[Error_Computer_List,Inside_List,Done_List]" class="example-list" (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of cardOutsides, let i = index" cdkDrag>
+            <div>
+                <div class="item" style="font-size: auto;">Tên Máy: {{item.TenMay}}</div>
+                <br>
+                <div class="item" style="font-size: auto;">Mã Tài Sản: {{item.MaTaiSan}}</div>
+                <br>
+                <div>Tag: <button *ngFor="let tag of item. Tag" class="badge badge-pill badge-secondary" style="margin-left: 0.2em;margin-bottom: 0.9em;"> {{tag}} </button></div>
+                <br>
+                <div>
+                    Tình trạng: <span class="badge badge-warning">Outside</span>
+                </div>
+                <br>
+                <button style="float: right;" class="btn btn-primary btn-sm float-lg-left" [class.active]="i == currentItem" [class.active]="i == currentItem" (click)="open(detailOutside); setActiveTutorial(item,i)">Profile</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="example-container">
+    <h4>Done</h4>
+    <div cdkDropList #Done_List="cdkDropList" [cdkDropListData]="cardDones" [cdkDropListConnectedTo]="[Error_Computer_List,Inside_List,Outside_List]" class="example-list" (cdkDropListDropped)="drop($event)">
+
+        <div class="example-box" *ngFor="let item of cardDones, let i = index" cdkDrag>
+            <div>
+                <div class="item" style="font-size: auto;">Tên Máy: {{item.TenMay}}</div>
+                <br>
+                <div class="item" style="font-size: auto;">Mã Tài Sản: {{item.MaTaiSan}}</div>
+                <br>
+                <div>Tag: <button *ngFor="let tag of item. Tag" class="badge badge-pill badge-secondary" style="margin-left: 0.2em;margin-bottom: 0.9em;"> {{tag}} </button></div>
+                <br>
+                <div>
+                    Tình trạng: <span class="badge badge-success">Đã sửa xong</span>
+                </div>
+                <br>
+                <button style="float: right;" class="btn btn-primary btn-sm float-lg-left" [class.active]="i == currentItem" [class.active]="i == currentItem" (click)="open(detailDone); setActiveTutorial(item,i)">Profile</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<ng-template #addComputer let-modal>
+    <div class="modal-header">
+        <button type="button" class="close" (click)="modal.dismiss('Cross click')">
+<span aria-hidden="true">&times;</span>
+</button>
+    </div>
+    <div class="modal-body">
+        <app-computer-add></app-computer-add>
+    </div>
+    <div class="modal-footer">
+    </div>
+</ng-template>
+
+
+<ng-template #detailComputer let-modal>
+    <div class="modal-header">
+        <h3 class="modal-TenMay" id="modal-basic-TenMay"></h3>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+<span aria-hidden="true">&times;</span>
+</button>
+    </div>
+    <div class="modal-body">
+        <div *ngIf="currentItem">
+            <app-computer-details (refreshList)="refreshList()" [tutorial]="currentItem"></app-computer-details>
+        </div>
+    </div>
+    <div class="modal-footer">
+    </div>
+</ng-template>
+
+<ng-template #detailDone let-modal>
+    <div class="modal-header">
+        <h3 class="modal-TenMay" id="modal-basic-TenMay"></h3>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+<span aria-hidden="true">&times;</span>
+</button>
+    </div>
+    <div class="modal-body">
+        <div *ngIf="currentItem">
+            <app-done-detail (refreshList)="refreshList()" [tutorial]="currentItem"></app-done-detail>
+        </div>
+    </div>
+    <div class="modal-footer">
+    </div>
+</ng-template>
+
+<ng-template #detailInside let-modal>
+    <div class="modal-header">
+        <h3 class="modal-TenMay" id="modal-basic-TenMay"></h3>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+<span aria-hidden="true">&times;</span>
+</button>
+    </div>
+    <div class="modal-body">
+        <div *ngIf="currentItem">
+            <app-inside-detail (refreshList)="refreshList()" [tutorial]="currentItem"></app-inside-detail>
+        </div>
+    </div>
+    <div class="modal-footer">
+    </div>
+</ng-template>
+
+<ng-template #detailOutside let-modal>
+    <div class="modal-header">
+        <h3 class="modal-TenMay" id="modal-basic-TenMay"></h3>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+<span aria-hidden="true">&times;</span>
+</button>
+    </div>
+    <div class="modal-body">
+        <div *ngIf="currentItem">
+            <app-outside-detail (refreshList)="refreshList()" [tutorial]="currentItem"></app-outside-detail>
+        </div>
+    </div>
+    <div class="modal-footer">
+    </div>
+</ng-template>

@@ -1,0 +1,107 @@
+<div *ngIf="currentItem" class="edit-form">
+    <div *ngIf="!deleteDone">
+        <div *ngIf="!submitted">
+            <div *ngIf="!updated">
+                <form>
+                    <div class="form-group">
+                        <label for="TenMay">Tên Máy:  {{currentItem.TenMay}} </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Tên Chủ Tài Sản: {{currentItem.username}} </label> </div>
+                    <div class="form-group">
+                        <label for="mail">E-mail Chủ Tài Sản: {{currentItem.mail}} </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="MaTaiSan">Mã Tài Sản: {{currentItem.MaTaiSan}} </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="DonVi">Đơn Vị Tiếp Nhận: {{currentItem.DonVi}} </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="MoTa">Mô Tả: </label>
+                        <textarea rows="3" type="text" class="form-control" id="MoTa" [(ngModel)]="currentItem.MoTa" name="MoTa"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="KetLuan">Kết Luận: </label>
+                        <textarea rows="3" type="text" class="form-control" id="KetLuan" [(ngModel)]="currentItem.KetLuan" name="KetLuan"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Tạo Vào Lúc: {{currentItem.time | date:'medium'}} </label>
+                    </div>
+                    <div class="form-group">
+                        <div>Tag: <button *ngFor="let tag of currentItem. Tag" class="badge badge-pill badge-secondary" style="margin-left: 0.2em;margin-bottom: 0.9em;" (click)="removeTag(tag)"> {{tag}} </button>
+                            <button class="badge badge-pill badge-primary" style="margin-left: 0.2em;margin-bottom: 0.9em;" type="button" data-toggle="modal" (click)="open(content)">Add+</button></div>
+                    </div>
+                    <div class="form-group"> Hình Ảnh :
+                        <input type="file" (change)="uploadFile($event)" multiple accept='image/*' />
+                        <div><label for="Img"> <span></span></label><button *ngFor="let img of tutorial.img" class="badge badge-pill badge-secondary" style="margin-left: 0.2em;margin-bottom: 0.9em;"> {{img}} </button>
+                        </div>
+                        <br>
+                        <button class="badge badge-primary" (click)="removeImg()"> Xóa tất cả </button>
+                        <br>
+
+
+                        <div style="text-align: center;">
+                            <a style="margin-left: 1.5em;" *ngFor="let img of urlLength"><img width="220px" height="420px" [src]="img | async"></a>
+                        </div>
+                    </div>
+                </form>
+                <div style="float: right;">
+                    <button class="btn btn-outline-primary mr-1" (click)="deleteCard()"> Xoá </button>
+                    <button type="submit" class="btn btn-outline-primary mr-1" (click)="update();"> Cập nhật </button>
+                </div>
+                <div>
+                    <div style="float: right;">
+                        <button type="submit" class="btn btn-outline-warning mr-1" (click)="moveInside()"> Fix tại chổ </button>
+
+                        <button type="submit" class="btn btn-outline-warning mr-1" (click)="moveOutside()"> Fix từ bên ngoài </button>
+
+                    </div>
+
+                </div>
+
+                <a type="submit" class="btn btn-outline-primary mr-1" [routerLink]="['bill']" [queryParams]="currentItem" (click)="onCloseModal($event)">Tạo Biên Bản</a>
+            </div>
+            <div *ngIf="updated">
+                <h4>Cập nhật thành công!</h4>
+            </div>
+        </div>
+        <div *ngIf="submitted">
+
+            <h4>Tạo Biểu Mẫu Thành công!!</h4>
+
+        </div>
+    </div>
+
+
+
+
+</div>
+<div *ngIf="!currentItem">
+    <br />
+</div>
+<div *ngIf="deleteDone">
+    <h4>Xóa Thành công!!</h4>
+</div>
+
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-TenMay" id="modal-basic-TenMay" style="font-size: 1.4em;">Hãy chọn các Tag</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')"> <span aria-hidden="true">&times;</span></button>
+    </div>
+    <div class="modal-body">
+        <button type="submit" (click)="onAddTag('CPU')" class="btn btn-warning btn-sm mt-2">CPU</button>
+        <button style="margin-left: 1em;" type="submit" (click)="onAddTag('Màn Hình')" class="btn btn-warning btn-sm mt-2">Màn Hình</button>
+        <button style="margin-left: 1em;" type="submit" (click)="onAddTag('Case')" class="btn btn-warning btn-sm mt-2">Case</button>
+        <button style="margin-left: 1em;" type="submit" (click)="onAddTag('Bàn Phím')" class="btn btn-warning btn-sm mt-2">Bàn Phím</button>
+        <button style="margin-left: 1em;" type="submit" (click)="onAddTag('Nguồn')" class="btn btn-warning btn-sm mt-2">Nguồn</button>
+        <button style="margin-left: 1em;" type="submit" (click)="onAddTag('Phần mềm')" class="btn btn-warning btn-sm mt-2">Phần mềm</button>
+        <button style="margin-left: 1em;" type="submit" (click)="onAddTag('RAM')" class="btn btn-warning btn-sm mt-2">RAM</button>
+        <button style="margin-left: 1em;" type="submit" (click)="onAddTag('Main')" class="btn btn-warning btn-sm mt-2">Main</button>
+        <button style="margin-left: 1em;" type="submit" (click)="onAddTag('HDD')" class="btn btn-warning btn-sm mt-2">HDD</button>
+        <button style="margin-left: 1em;" type="submit" (click)="onAddTag('HDMI')" class="btn btn-warning btn-sm mt-2">HDMI</button>
+        <button style="margin-left: 1em;" type="submit" (click)="onAddTag('SSD')" class="btn btn-warning btn-sm mt-2">SSD</button>
+        <button style="margin-left: 1em;" type="submit" (click)="onAddTag('DVD')" class="btn btn-warning btn-sm mt-2">DVD</button>
+    </div>
+</ng-template>

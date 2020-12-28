@@ -1,0 +1,29 @@
+<div *ngIf="!isSignedIn">
+    <form>
+        <div class="form-group">
+            <label for="username">E-Mail</label>
+            <input type="email" class="form-control" #emailSignin/>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" class="form-control" #passwordSignin/>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="OnSignin(emailSignin.value, passwordSignin.value); open(sumit)" data-toggle="modal" data-target="#addComputer">Submit</button>
+        <ng-template #sumit let-modal>
+            <div class="modal-header">
+                <button type="button" class="close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+      </button>
+            </div>
+            <div *ngIf="isSignedIn == true" class="modal-body">
+                <h2>Đăng nhập thành công với E-mail: {{emailSignin.value}}</h2>
+            </div>
+            <div *ngIf="isSignedIn == false" class="modal-body">
+                <h2>Xin hãy xem lại E-mail hoặc Password của bạn!!</h2>
+            </div>
+        </ng-template>
+
+    </form>
+</div>
+
+<app-home (isLogout)="handleLogout()" *ngIf="isSignedIn" [email]="get_mail"></app-home>
